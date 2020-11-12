@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <game name="Not Alone"
     id="af04f855-58c4-4db3-a191-45fe33381991"
-    version="1.1.0.0" 
+    version="1.1.1.11" 
     tags="OCTG Not Alone"
     description="[2-7 joueurs][45min]
 	&#xd;25e siècle, l’Humanité s’est envolée depuis longtemps vers les étoiles. Elle a voyagé aux confins de la galaxie  et pourtant, elle n’a jamais rencontré d’autres formes de vie intelligente. Après l'aterrisage d'urgence de votre expédition sur la planète Artemia, vous entamez l’exploration des environs lorsque vous entendez les cris d’agonie de votre capitaine. Au loin vous distinguez une silhouette qui vous observe. Vous n’êtes pas seul ..."
@@ -9,7 +9,7 @@
 	gameurl="https://darkelwyn.github.io/octgn/NotAlone/"
     authors="RomElwyn"
     iconurl="https://darkelwyn.github.io/octgn/NotAlone/ico.png"
-    octgnVersion="3.1.240.0"
+    octgnVersion="3.4.240.0"
     scriptVersion="3.1.0.2"
     markersize="30"
 	usetwosidedtable="False"
@@ -34,6 +34,9 @@
     </sounds>
     <fonts>
     </fonts>
+	<markers>
+		<marker id="00000001-0000-0001-0001-000000000003" name="" src="Markers/00000001-0000-0001-0001-000000000003.png" />
+	</markers>
     <proxygen definitionsrc="Proxies/proxydef.xml">
     </proxygen>
 	<phases>
@@ -85,7 +88,7 @@
 		<cardaction menu="Avancer les secours" execute="increaseSecoursToken" showIf="canIncreaseSecoursToken" />
 		<cardaction menu="Reculer les secours" execute="decreaseSecoursToken" showIf="canDecreaseSecoursToken" />
     </table>
-   <player summary="PV:{#Volonté} Main:{#Main}">
+   <player summary="PV:{#Volonté} Main:{#hand}">
 	<globalvariable name="ready" value="False" />
 	<globalvariable name="preferAlien" value="False" />
 	<globalvariable name="isAlien" value="False" />
@@ -93,7 +96,7 @@
 	<globalvariable name="isSoundMuted" value="False" />
 	
     <counter name="Volonté" icon="Resources/heart.png" default="3" />
-    <hand name="Main" shortcut="ctrl+H" visibility="me" ordered="False" icon="Resources/hand.png">
+    <group name="hand" shortcut="ctrl+H" visibility="me" ordered="False" icon="Resources/hand.png" viewState="expanded">
 		<groupaction menu="Jouer une carte lieu aléatoire" execute="playRandomly" showIf="IamNotAlien" />
 		<groupseparator />
 		
@@ -102,7 +105,7 @@
 		<groupaction menu="Lâcher prise" execute="surrender" showIf="IamNotAlien" />
 
 		<cardaction menu="Jouer cette carte fasse cachée" execute="playCard" />
-    </hand>
+    </group>
     <group name="Pioche" shortcut="ctrl+E" visibility="none"  icon="Resources/deck.png" collapsed="True">
 		<groupaction menu="Mélanger" execute="shuffle" />
     </group>

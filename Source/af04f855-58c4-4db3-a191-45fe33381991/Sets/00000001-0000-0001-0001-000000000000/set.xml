@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <set name="Base Set" id="00000001-0000-0001-0001-000000000000" gameId="af04f855-58c4-4db3-a191-45fe33381991" gameVersion="1.0.0.0" version="1.0">
-	<markers>
-		<marker id="00000001-0000-0001-0001-000000000003" name="" />
-	</markers>
     <cards>
 		<card id="00000001-0000-0001-0001-000000000004" name="Alien" size="Alien"/>
 		<card id="00000001-0000-0001-0001-000000000005" name="Alien" size="Alien"/>
